@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SUPRV | Booking Form</title>
+  <link rel="shortcut icon" href="../img/logo.png " type="image/x-icon">
+  <link rel="stylesheet" href="../style.css">
+  <style>
+    body {
+      background-color: #f3f4f6;
+      height: calc(100vh - 50px);
+    }
+
+    .booking-form-container {
+      height: 100%;
+    }
+
+    .container {
+      background-color: white;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      width: 500px;
+    }
+
+
+
+    .navbar {
+      background-color: #333;
+      border-radius: 10px 10px 0 0;
+    }
+
+    .contact-top-img {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .contact-top-img img {
+      width: 30%;
+      border-radius: 8px;
+    }
+
+    input,
+    select,
+    button {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 25px;
+      margin-bottom: 10px;
+    }
+
+    .guest-counter {
+      gap: 10px;
+      height: 50px;
+      margin: 10px;
+      width: 100%;
+      overflow: hidden;
+      justify-content: space-between;
+    }
+
+    .guest-counter>.flex {
+      height: 100%;
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+
+    .guestCountBox {
+      width: 50px;
+      height: 100%;
+      margin-bottom: 10px;
+      font-size: 20px;
+      font-weight: bold;
+
+    }
+
+    .guest-counter button {
+      height: 50px;
+      width: 70px;
+      background-color: #e5e7eb;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+      font-size: 18px;
+    }
+
+    .book-now {
+      background-color: #3b82f6;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .book-now:hover {
+      background-color: #2563eb;
+    }
+
+    .qr-placeholder {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 100%;
+      height: 100vh;
+      background-color: rgba(0, 0, 0, 0.079);
+      backdrop-filter: blur(5px);
+
+      border: 2px solid black;
+      border-radius: 10px;
+      display: none;
+      /* Hidden by default */
+      margin: auto;
+    }
+
+    .qr-img-container {
+      background-color: white;
+      height: 350px;
+      width: 350px;
+      display: flex;
+      justify-content: center;
+      border-radius: 50%;
+      align-items: center;
+      box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5),
+        inset 5px 5px 10px rgba(0, 0, 0, 0.378);
+    }
+
+    .qr-placeholder img {
+      height: 200px;
+      z-index: 999;
+    }
+
+    .cancel {
+      position: absolute;
+      right: 10px;
+      top: 10px;
+      height: 40px;
+      width: 40px;
+      background-color: white;
+      border-radius: 50%;
+      font-weight: bold;
+      font-size: 20px;
+      cursor: pointer;
+      box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5),
+        inset 5px 5px 10px rgba(0, 0, 0, 0.378);
+    }
+    .cancel:hover{
+      background-color: rgb(170, 0, 0);
+      color:white;
+      scale:1.04;
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="navbar">
+    <a href="../index.html">
+      <div class="logo flex">
+        <img src="../img/logo.png"> SUPRV ACCO
+      </div>
+    </a>
+    <div class="hamburger" onclick="toggleMenu()">☰</div>
+    <div class="flex">
+      <ul class="nav-links flex">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="rooms.html" id="active">Rooms</a></li>
+        <li><a href="blogs.html">Blogs</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="about.html">About</a></li>
+        <div class="book-btn-container flex">
+          <li> <a href="booking-form.html" class="book-btn flex">Book Online </a> </li>
+          <li> <a href="tel:+91 914256****" class="book-btn flex">📞 +91 3344556677 </a> </li>
+        </div>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="booking-form-container flex">
+    <div class="container flex">
+      <div class="contact-top-img">
+        <img src="../img/beach house.jpg">
+        <img src="../img/double bed.jpg">
+        <img src="../img/suites.jpg">
+      </div>
+      <form>
+        <input type="text" placeholder="First Name" required>
+        <input type="text" placeholder="Last Name" required>
+        <input type="email" placeholder="myname@mail.com" required>
+        <label>
+          <center><b>Room Type</b></center>
+        </label>
+        <select>
+          <option>Please Select</option>
+          <option>Single Room</option>
+          <option>Double Room</option>
+          <option>Suite</option>
+          <option>Dormitory</option>
+          <option>Beach House</option>
+        </select>
+        <div class="guest-counter flex">
+          <div class="flex">Number of Guests *</div>
+          <button type="button" onclick="decreaseGuests()">-</button>
+          <div id="guestCount" class="guestCountBox flex"> 1 </div>
+          <button type="button" onclick="increaseGuests()">
+            +
+          </button>
+        </div>
+        <a
+          href="upi://pay?pa=rahuljiaraofficial-2@okaxis&pn=Rahul%20Kumar&mc=0000&tid=123456&tr=TXN123&tn=PaymentForBooking&am=1500.00&cu=INR">
+          <div class="submit-btn">
+            <button type="button" class="book-now" onclick="makeUPIPayment()">Book Now</button>
+          </div>
+        </a>
+      </form>
+    </div>
+  </div>
+
+  <div id="qrPlaceholder" class="qr-placeholder flex">
+    <div class="qr-img-container">
+      <img src="../img/QR.png">
+    </div>
+
+    <div class="cancel flex" id="cancleBtn" onclick="cancleToggle()">X</div>
+  </div>
+  <script>
+
+    let guestCount = 0;
+    function increaseGuests() {
+      guestCount++;
+      document.getElementById('guestCount').textContent = guestCount;
+    }
+    function decreaseGuests() {
+      if (guestCount > 0) {
+        guestCount--;
+        document.getElementById('guestCount').textContent = guestCount;
+      }
+    }
+
+    function makeUPIPayment() {
+      document.getElementById("qrPlaceholder").style.display = "flex";
+      document.getElementById("errorText").style.display = "block";
+    }
+
+    function cancleToggle() {
+      document.getElementById("qrPlaceholder").style.display = "none";
+
+    }
+
+  </script>
+</body>
+
+</html>

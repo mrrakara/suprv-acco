@@ -1,0 +1,39 @@
+{
+  "rooms": [
+    {
+      "id": "single-bed",
+      "name": "Single Bed Room",
+      "image": "../img/single bed.jpg",
+      "description": "Perfect for solo travelers, featuring elegant decor and modern amenities.",
+      "features": ["Free WiFi", "24/7 Room Service", "Air Conditioning", "Smart TV", "Mini Bar"]
+    },
+    {
+      "id": "double-bed",
+      "name": "Double Bed Room",
+      "image": "../img/double bed.jpg",
+      "description": "Cozy and spacious, ideal for couples or two guests, with a stunning view.",
+      "features": ["Free Breakfast", "Balcony View", "King-size Bed", "Air Conditioning", "Free Parking"]
+    },
+    {
+      "id": "dormitory",
+      "name": "Dormitory Room",
+      "image": "../img/dormitory.jpg",
+      "description": "Affordable shared accommodations, perfect for backpackers and groups.",
+      "features": ["Shared Kitchen", "Lockers", "Common Lounge", "WiFi", "Laundry Services"]
+    },
+    {
+      "id": "suites",
+      "name": "Luxury Suite",
+      "image": "../img/suites.jpg",
+      "description": "Experience the pinnacle of luxury with spacious suites and premium services.",
+      "features": ["Jacuzzi", "Private Balcony", "Personal Butler", "Smart Home Features", "Gourmet Dining"]
+    },
+    {
+      "id": "beach-house",
+      "name": "Beach House",
+      "image": "../img/beach house.jpg",
+      "description": "Enjoy a private retreat by the ocean with breathtaking views and comfort.",
+      "features": ["Private Beach Access", "Infinity Pool", "BBQ Area", "Ocean View", "Private Garden"]
+    }
+  ]
+}

@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SUPRV | Blogs</title>
+  <link rel="shortcut icon" href="../img/logo.png " type="image/x-icon">
+  <link rel="stylesheet" href="../style.css">
+  <style>
+    /* General Styles */
+    body {
+      font-family: Arial, sans-serif;
+      background-image: url(../img/aboutbg.png);
+      margin: 0;
+      padding: 0;
+      overflow-y: scroll;
+    }
+
+    .navbar{
+      background-color: #333;
+    }
+
+    /* Blog Section */
+    .blog-container {
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .blog-title {
+      font-size: 32px;
+      font-weight: bold;
+      color: #333;
+    }
+
+    .blog-subtitle {
+      font-size: 18px;
+      color: #666;
+      margin-bottom: 30px;
+    }
+
+    /* Blog Grid */
+    .blog-grid {
+      display: grid;
+      gap: 20px;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+
+    /* Blog Card */
+    .blog-card {
+      background: white;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    }
+
+    .blog-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    .blog-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .blog-content {
+      padding: 15px;
+      text-align: left;
+    }
+
+    .blog-content h3 {
+      font-size: 20px;
+      color: #333;
+      margin: 10px 0;
+    }
+
+    .blog-content p {
+      font-size: 14px;
+      color: #666;
+      margin-bottom: 10px;
+    }
+
+    .read-more {
+      color: #007bff;
+      font-weight: bold;
+      text-decoration: none;
+      display: inline-block;
+      margin-top: 10px;
+    }
+
+    .read-more:hover {
+      text-decoration: underline;
+    }
+
+    /* Call to Action */
+    .cta-section {
+      margin-top: 40px;
+      text-align: center;
+    }
+
+    .cta-section h3 {
+      font-size: 24px;
+      color: #333;
+    }
+
+    .cta-section p {
+      font-size: 16px;
+      color: #666;
+      margin: 10px 0;
+    }
+
+    .cta-button {
+      display: inline-block;
+      background: #007bff;
+      color: white;
+      padding: 12px 24px;
+      border-radius: 8px;
+      font-size: 16px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.3s ease-in-out, transform 0.2s ease-in-out;
+    }
+
+    .cta-button:hover {
+      background: #0056b3;
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav class="navbar">
+    <a href="../index.html">
+      <div class="logo flex">
+        <img src="../img/logo.png"> SUPRV ACCO
+      </div>
+    </a>
+    <div class="hamburger" onclick="toggleMenu()">☰</div>
+    <div class="flex">
+      <ul class="nav-links flex">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="rooms.html">Rooms</a></li>
+        <li><a href="blogs.html" id="active">Blogs</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="about.html">About</a></li>
+        <div class="book-btn-container flex">
+          <li> <a href="booking-form.html" class="book-btn flex">Book Online </a> </li>
+          <li> <a href="tel:+91 914256****" class="book-btn flex">📞 +91 3344556677 </a> </li>
+        </div>
+      </ul>
+    </div>
+  </nav>
+  <!-- Blog Section -->
+  <section class="blog-container">
+    <h2 class="blog-title">Travel & Stay Blog</h2>
+    <p class="blog-subtitle">Explore expert travel tips, destination guides, and hotel reviews.</p>
+
+    <!-- Blog Grid -->
+    <div class="blog-grid">
+      <!-- Blog Post 1 -->
+      <div class="blog-card">
+        <img
+          src="https://media.istockphoto.com/id/146765403/photo/a-luxurious-florida-beach-hotel-during-sunrise.jpg?s=612x612&w=0&k=20&c=pxw9Q78KbvqV6_pS_C-v_m6S_WQjKWLBSdqgRtqMUUg="
+          alt="Hotel">
+        <div class="blog-content">
+          <h3>Top 10 Luxury Stays in 2025</h3>
+          <p>Explore the best 5-star hotels with world-class amenities and comfort.</p>
+          <a href="#" class="read-more">Read More →</a>
+        </div>
+      </div>
+
+      <!-- Blog Post 2 -->
+      <div class="blog-card">
+        <img
+          src="https://media.istockphoto.com/id/146753772/photo/resort-in-cancun-shown-in-the-daytime-from-the-air.jpg?s=612x612&w=0&k=20&c=TsDt2nU2cZBsQ4H4czSyTXWpHtcWcJWTrfsjq4ahSb8="
+          alt="Beach Hotel">
+        <div class="blog-content">
+          <h3>Best Beach Destinations for 2025</h3>
+          <p>Find stunning seaside resorts for the perfect summer vacation.</p>
+          <a href="#" class="read-more">Read More →</a>
+        </div>
+      </div>
+
+      <!-- Blog Post 3 -->
+      <div class="blog-card">
+        <img src="https://cdn.pixabay.com/photo/2021/03/11/14/57/money-6087334_1280.jpg" alt="Budget Stay">
+        <div class="blog-content">
+          <h3>How to Find Budget Stays</h3>
+          <p>Save money with these smart hotel booking tips.</p>
+          <a href="#" class="read-more">Read More →</a>
+        </div>
+      </div>
+
+      <!-- Blog Post 4 -->
+      <div class="blog-card">
+        <img
+          src="https://media.istockphoto.com/id/1340858330/photo/pelekas-kontogialos-beach-corfu-greece.jpg?s=612x612&w=0&k=20&c=o-ljA94nyCCfiS2aPM_RrJRoZBnAwdCtJ_AG6LHUZlo="
+          alt="Airbnb Stay">
+        <div class="blog-content">
+          <h3>Hotel vs. Airbnb: Which is Better?</h3>
+          <p>Compare luxury hotels and private Airbnbs for your next trip.</p>
+          <a href="#" class="read-more">Read More →</a>
+        </div>
+      </div>
+
+      <!-- Blog Post 5 -->
+      <div class="blog-card">
+        <img
+          src="https://img.freepik.com/premium-photo/friends-masks-with-travel-bags-airplane_380164-253587.jpg?semt=ais_hybrid"
+          alt="Travel Safety">
+        <div class="blog-content">
+          <h3>5 Safety Tips for Travelers</h3>
+          <p>Essential travel safety tips for solo and family trips.</p>
+          <a href="#" class="read-more">Read More →</a>
+        </div>
+      </div>
+
+      <!-- Blog Post 6 -->
+      <div class="blog-card">
+        <img src="https://cdn.pixabay.com/photo/2014/10/19/20/59/hamburger-494706_1280.jpg" alt="Local Food">
+        <div class="blog-content">
+          <h3>Best Local Foods to Try</h3>
+          <p>Discover delicious street food and traditional cuisines.</p>
+          <a href="#" class="read-more">Read More →</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Call to Action -->
+    <div class="cta-section">
+      <h3>Looking for the best stay?</h3>
+      <p>Book your perfect hotel at the best price now!</p>
+      <a href="booking-form.html" class="cta-button">Book Now</a>
+    </div>
+  </section>
+
+</body>
+
+</html>

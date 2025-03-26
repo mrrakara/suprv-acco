@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SUPRV | About Us</title>
+  <link rel="shortcut icon" href="../img/logo.png" type="image/x-icon">
+  <link rel="stylesheet" href="../style.css">
+  <script defer src="script.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+  <style>
+    body {
+      background-image: none;
+      background-color: white;
+      color: black;
+      height: 100vh;
+    }
+
+    .navbar {
+      background-color: #333;
+      border-radius: 10px 10px 0 0;
+    }
+
+    /* Hero Section */
+    .hero-container {
+      background: url('../img/aboutbg.png') no-repeat center center/cover;
+      height: calc(100vh - 120px);
+      width: 100%;
+      position: relative;
+      overflow-y: auto;
+    }
+
+    .hero {
+      height: fit-content;
+      flex-direction: column;
+      text-align: center;
+      color: #2f2f2f;
+      position: relative;
+      overflow: hidden;
+      padding: 20px;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 10px;
+      color: salmon;
+      animation: slideInDown 1s ease-in-out;
+    }
+
+    .hero p {
+      font-size: 15px;
+      width: 75%;
+      text-align: center;
+      color: #4b4b4b;
+      margin-bottom: 20px;
+      animation: slideInUp 1s ease-in-out;
+    }
+
+    .btn {
+      display: inline-block;
+      background: #003007;
+      box-shadow: 1px 1px 10px rgba(255, 255, 255, 0.644);
+      color: white;
+      padding: 12px 24px;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 50px;
+      transition: background 0.3s ease-in-out;
+    }
+
+    .btn:hover {
+      background: #006909;
+    }
+
+    /* Responsive Hero Section */
+    @media (max-width: 768px) {
+      .hero-content h1 {
+        font-size: 2rem;
+      }
+
+      .hero-content p {
+        font-size: 1rem;
+      }
+
+      .btn {
+        padding: 10px 20px;
+      }
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+
+    @keyframes slideInDown {
+      from {
+        transform: translateY(-50px);
+        opacity: 0;
+      }
+
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    @keyframes slideInUp {
+      from {
+        transform: translateY(50px);
+        opacity: 0;
+      }
+
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    /* Sections */
+    section {
+      padding: 50px;
+      text-align: center;
+    }
+
+    section .heading {
+      padding: 50px;
+      color: rgb(255, 85, 66);
+      text-shadow: 1px 1px 1px black;
+    }
+
+
+
+    .services .service-list {
+      gap: 20px;
+      justify-content: space-evenly;
+    }
+
+    .service-item {
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+      width: 250px;
+      min-height: 150px;
+      height: fit-content;
+      padding: 10px 0;
+      cursor: pointer;
+    }
+
+    .service-item:hover {
+      scale: 1.01;
+      transition: .3s;
+    }
+
+    .service-item .icon {
+      height: 30px;
+      color: rgb(0, 37, 97);
+      font-size: 18px;
+    }
+
+    .service-item h3 {
+      height: 50px;
+    }
+
+    .service-item p {
+      height: calc(100% - 80px);
+      align-items: start;
+    }
+
+    /* Responsive Services */
+    @media (max-width: 768px) {
+      .services .service-list {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .service-item {
+        width: 90%;
+      }
+    }
+
+    .contact{
+      word-wrap: break-word;
+    }
+
+    /* Footer */
+    footer {
+      min-height: 50px;
+      height: fit-content;
+      width: 100%;
+      height: fit-content;
+      text-align: center;
+      padding: 20px;
+      background: #7d7d7d;
+      color: #fff;
+    }
+
+    .team-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+        .card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            width: 300px;
+            text-align: center;
+        }
+        .card img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+        .card h3 {
+            margin: 10px 0 5px;
+        }
+        .card p {
+            color: #555;
+        }
+        @media (max-width: 768px) {
+            .team-container {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+  </style>
+</head>
+
+<body>
+  <header>
+    <nav class="navbar">
+      <a href="../index.html">
+        <div class="logo flex">
+          <img src="../img/logo.png"> SUPRV ACCO
+        </div>
+      </a>
+      <div class="hamburger" onclick="toggleMenu()">☰</div>
+      <div class="flex">
+        <ul class="nav-links flex">
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="rooms.html">Rooms</a></li>
+          <li><a href="blogs.html">Blogs</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="about.html" id="active">About</a></li>
+          <div class="book-btn-container flex">
+            <li> <a href="booking-form.html" class="book-btn flex">Book Online </a> </li>
+            <li> <a href="tel:+91 914256****" class="book-btn flex">📞 +91 3344556677 </a> </li>
+          </div>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <div class="hero-container">
+    <section id="home" class="hero flex">
+      <h1>ABOUT US</h1>
+      <h4>WELCOME TO SUPRV ACCOMMODATION </h4>
+
+      <p>At SUPRV ACCOMMODATION, we believe that finding the perfect stay should be effortless, affordable, and truly
+        inspiring. Whether you're traveling for business, leisure, or a special occasion, we make it easy to discover
+        accommodations that suit your style, needs, and budget. From lavish resorts and five-star hotels to charming
+        boutique stays and budget-friendly gems, we connect you to
+        a world of exceptional lodging experiences. With a seamless booking process and a curated selection of stays, we
+        ensure that every journey—whether a weekend getaway or an extended retreat—is as comfortable and memorable as
+        possible. Wherever you go, let us help you find the perfect place to call home.</p>
+      <a href="booking-form.html" class="btn">Book Now</a>
+    </section>
+
+    <section id="services" class="services">
+      <h2 class="heading flex">Our Services</h2>
+      <div class="service-list flex">
+        <div class="service-item">
+          <div class="icon flex">
+            <i class="fa-solid fa-hotel"></i>
+          </div>
+          <h3 class=" flex">Luxury Stays</h3>
+          <p class="flex">Experience the most luxurious hotels with top-tier services.</p>
+        </div>
+        <div class="service-item">
+          <div class="icon flex">
+            <i class="fa-solid fa-plane"></i>
+          </div>
+          <h3 class="flex">Travel Assistance</h3>
+          <p class="flex">We help you find the best travel routes and accommodations.</p>
+        </div>
+        <div class="service-item">
+          <div class="icon flex">
+            <i class="fa-solid fa-utensils"></i>
+          </div>
+          <h3 class="flex">Food</h3>
+          <p class="flex">Complimentary Continental food on your bookings.</p>
+        </div>
+        <div class="service-item">
+          <div class="icon flex">
+            <i class="fa-solid fa-tag"></i>
+          </div>
+          <h3 class="flex">Best Deals</h3>
+          <p class="flex">Get exclusive discounts on your hotel bookings.</p>
+        </div>
+      </div>
+
+      <section id="team" class="teams">
+        <h2 class="heading flex">Meet Our Team</h2>
+        <div class="team-container">
+            <div class="card">
+                <img src="../img/team/rahul.jpg" alt="John Doe">
+                <h3>Rahul Ji Ara</h3>
+                <p>Founder & CEO</p>
+                <p>Leads the company with a vision to revolutionize hotel booking with seamless experiences..</p>
+            </div>
+            <div class="card">
+                <img src="../img/team/shivam.jpg" alt="John Doe">
+                <h3>Shivam Kr.</h3>
+                <p>COO & MD</p>
+                <p>Oversees daily operations, ensuring efficiency and smooth execution of business strategies..</p>
+            </div>
+            <div class="card">
+                <img src="../img/team/udeshya.jpg" alt="Jane Smith">
+                <h3>Udeshya Raj</h3>
+                <p>Marketting Head</p>
+                <p>Develops marketing campaigns to promote hotel deals and enhance brand visibility.</p>
+            </div>
+            <div class="card">
+                <img src="../img/team/chamak.jpg" alt="Mark Lee">
+                <h3>Prince Kr.</h3>
+                <p>Senior Marketting Team Lead</p>
+                <p>Guides the marketing team in executing strategies to drive customer engagement and growth.</p>
+            </div>
+            <div class="card">
+                <img src="../img/team/vikash.jpg" alt="Emma Brown">
+                <h3>Vikash Kr.</h3>
+                <p>Head of Guest Services</p>
+                <p>Ensures exceptional customer service, addressing guest needs from booking to check-out.</p>
+            </div>
+        </div>
+      </section>
+
+      <section id="contact" class="contact">
+        <h2 class="heading flex">Contact Us</h2>
+        <p>Email: supportsuprv@gmail.com | Phone: +91-800-123-4567</p>
+      </section>
+  </div>
+  <footer>
+    <p>&copy; 2025 SUPRV ACCOMMODATION. All rights reserved.</p>
+  </footer>
+
+</body>
+
+</html>

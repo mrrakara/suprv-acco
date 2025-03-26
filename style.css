@@ -1,0 +1,289 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+  transition: .3s;
+}
+
+body {
+  height: 100vh;
+  width: 100%;
+  background: url('img/bg.png') no-repeat center center/cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow: hidden;
+}
+
+.bg {
+  height: 100vh;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.441);
+  z-index: 100;
+}
+
+.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+a {
+  text-decoration: none;
+}
+
+.navbar {
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 15px;
+  z-index: 1000;
+}
+
+.logo {
+  height: 45px;
+  padding: 0 10px;
+  color: #ffffff;
+  border: 3px solid rgb(201, 201, 201);
+  font-weight: bold;
+  border-radius: 5px;
+  font-size: 20px;
+  cursor: pointer;
+  text-shadow: 1px 1px 3px black;
+}
+
+.logo:hover {
+  text-shadow: 1px 1px 1px rgb(0, 0, 0);
+  color: rgb(224, 224, 224);
+}
+
+.logo img {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+}
+
+#active {
+  color: #ffa73c;
+}
+
+#active:hover {
+  color: #f6d0a2;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links a {
+  color: #ffffff;
+  font-size: 16px;
+}
+
+.nav-links a:hover {
+  color: #ffa73c;
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.book-btn-container li a {
+  color: white;
+}
+
+.book-btn-container li a:hover {
+  color: rgb(233, 233, 233);
+}
+
+.book-btn {
+  height: 40px;
+  width:fit-content;
+  background: #ffa37c;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 18px;
+  padding: 0 10px;
+  text-decoration: none;
+  transition: .3s;
+  text-shadow: 1px 1px 1px black;
+}
+
+.book-btn:hover {
+  background: #f35512;
+  transition: .3s;
+}
+
+/* Hamburger Menu Styles */
+.hamburger {
+  display: none;
+  font-size: 25px;
+  cursor: pointer;
+  color:white;
+}
+
+/* Responsive Styles */
+@media (max-width: 850px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 15px;
+    background: white;
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    z-index: 1000;
+  }
+  
+
+  .book-btn-container {
+    flex-direction: column;
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+
+  .nav-links li {
+    margin: 10px 0;
+    text-align: center;
+  }
+
+  .nav-links li a {
+    color: black;
+  }
+
+  .book-btn-container li a {
+    color: white;
+  }
+
+  .hamburger {
+    display: block;
+    position: absolute;
+    right: 10px;
+  }
+
+  .nav-right {
+    display: none;
+  }
+}
+
+/* Hero Page  */
+.hero {
+  height: calc(100vh - 60px);
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  position: relative;
+}
+
+.hero-overlay {
+  padding: 30px;
+  width: 80%;
+  border-radius: 10px;
+  flex-direction: column;
+}
+
+h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+  text-shadow: 1px 1px 1px black;
+}
+
+.hero-desc {
+  width: 60%;
+  font-size: 1rem;
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+
+/* Booking Buttons */
+.booking-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 20px;
+  width: 80%;
+}
+
+.explore-btn {
+  padding: 12px 20px;
+  border: none;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 50px;
+  transition: 0.3s;
+  font-size: 1rem;
+  text-shadow: 1px 1px 1px black;
+}
+
+.booking-btn span {
+  margin-left: 5px;
+}
+
+.explore-btn {
+  background: #ff5733;
+}
+
+.explore-btn:hover {
+  background: rgba(255, 91, 91, 0.4);
+}
+
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .hero-overlay {
+    width: 90%;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  .booking-container {
+    flex-direction: column;
+  }
+
+  .hero-overlay {
+    width: 100%;
+    padding: 0;
+  }
+  .hero-desc {
+    width: 98%;
+  }
+}
+
+@media (max-width: 300px){
+  body{
+    height:100%;
+    overflow-y: scroll;
+  }
+  .logo{
+    font-size: 10px;
+    padding: 0 5px;
+  }
+  .logo img{
+    width:20px;
+    height:20px;
+  }
+}

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SUPRV | Book your stay</title>
+  <link rel="shortcut icon" href="../img/logo.png " type="image/x-icon">
+  <link rel="stylesheet" href="../style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      height: calc(100vh - 50px);
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-image: url(../img/bookingbg.png);
+    }
+
+    .navbar {
+      background-color: #333;
+      border-radius: 10px 10px 0 0;
+    }
+
+    .container {
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      padding: 20px;
+      overflow-y: scroll;
+    }
+
+    h2 {
+      color: #222;
+      font-size: 32px;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+    }
+
+    .room-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      padding: 20px;
+    }
+
+    .card {
+      background: #fff;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.15);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      overflow: hidden;
+      cursor: pointer;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0px 12px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    .card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+
+    .card h3 {
+      margin: 15px 0 10px;
+      color: #007bff;
+      font-size: 22px;
+      font-weight: 600;
+    }
+
+    .card p {
+      color: #555;
+      font-size: 16px;
+      line-height: 1.5;
+    }
+
+    @media (max-width: 768px) {
+      .room-cards {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      }
+    }
+  </style>
+  <script>
+    function openBookingPage(roomType) {
+      window.location.href = `booking-details.html?room=${roomType}`;
+    }
+  </script>
+</head>
+
+<body>
+  <nav class="navbar">
+    <a href="../index.html">
+      <div class="logo flex">
+        <img src="../img/logo.png"> SUPRV ACCO
+      </div>
+    </a>
+    <div class="hamburger" onclick="toggleMenu()">☰</div>
+    <div class="flex">
+      <ul class="nav-links flex">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="rooms.html" id="active">Rooms</a></li>
+        <li><a href="blogs.html">Blogs</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="about.html">About</a></li>
+        <div class="book-btn-container flex">
+          <li> <a href="booking-form.html" class="book-btn flex">Book Online </a> </li>
+          <li> <a href="tel:+91 914256****" class="book-btn flex">📞 +91 3344556677 </a> </li>
+        </div>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container">
+    <h2>Choose Your Luxury Stay</h2>
+    <div class="room-cards">
+      <div class="card" data-room-id="single-bed" onclick="openBookingPage('single-bed')">
+        <img src="../img/single bed.jpg" alt="Single Room">
+        <h3>Single Bed</h3>
+        <p>Perfect for solo travelers, featuring elegant decor and modern amenities.</p>
+      </div>
+      <div class="card" data-room-id="double-bed" onclick="openBookingPage('double-bed')">
+        <img src="../img/double bed.jpg" alt="Double Room">
+        <h3>Double Bed</h3>
+        <p>Cozy and spacious, ideal for couples or two guests, with a stunning view.</p>
+      </div>
+      <div class="card" data-room-id="dormitory" onclick="openBookingPage('dormitory')">
+        <img src="../img/dormitory.jpg" alt="Dormitories">
+        <h3>Dormitories</h3>
+        <p>Affordable shared accommodations, perfect for backpackers and groups.</p>
+      </div>
+      <div class="card" data-room-id="suites" onclick="openBookingPage('suites')">
+        <img src="../img/suites.jpg" alt="Suites">
+        <h3>Suites</h3>
+        <p>Experience the pinnacle of luxury with spacious suites and premium services.</p>
+      </div>
+      <div class="card" data-room-id="beach-house" onclick="openBookingPage('beach-house')">
+        <img src="../img/beach house.jpg" alt="Beach Houses">
+        <h3>Beach Houses</h3>
+        <p>Enjoy a private retreat by the ocean with breathtaking views and comfort.</p>
+      </div>
+    </div>
+  </div>
+  <script>
+  document.querySelectorAll(".card").forEach(card => {
+    card.addEventListener("click", function () {
+        const roomId = this.getAttribute("data-room-id");
+        window.location.href = `booking-details.html?room=${roomId}`;
+    });
+});
+  </script>
+</body>
+
+</html>
